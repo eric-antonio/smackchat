@@ -5,7 +5,7 @@
 
 
         <q-toolbar-title class="absolute-center">
-          Smackchat
+          {{title}}
         </q-toolbar-title>
 
 
@@ -71,7 +71,17 @@ const linksList = [
 
 export default defineComponent({
   name: 'MainLayout',
+  computed:{
+    title(){
+      let curentPath = this.$route.fullPath
+      if (curentPath == '/')return 'SmackCaht'
+      else if (curentPath == '/chat') return 'Chat'
+      else if (curentPath == '/auth') return 'LogIn'
 
+    }
+  },
+
+  
   components: {
     EssentialLink
   },
