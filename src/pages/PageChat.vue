@@ -1,7 +1,15 @@
 <template>
   <q-page class="flex ">
 
-    <h5> Chat page</h5>
+    <div class="q-pa-md column col justify-end" >
+      <q-chat-message
+      v-for="message in messages"
+        :key="message.text"
+        :name="[message.from]"
+        :text="[message.text]"
+        sent
+      />
+    </div>
     <q-footer elevated>
 
         <q-toolbar>
@@ -12,7 +20,7 @@
             outlined
             bg-color="white"
             rounded
-            v-model="text"
+            v-model="newMessage"
             label="Message"
             dense>
 
@@ -33,6 +41,24 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+
+  data(){
+    return{
+      newMessage: '',
+      messages:[
+        {
+          text:'Oi Baby❤️ Tudo bem!',
+          from:'me'
+        },{
+          text:'Olá Honey🥰😍, estou e tu?',
+          from:'them'
+        },{
+          text:'Estiu sim. Estou com saudades🥺, vemonos na sexta?',
+          from:'me'
+        }
+      ]
+    }
+  }
 
 })
 </script>
