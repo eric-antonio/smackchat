@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-
+        <q-btn color="primary" icon="mail" label="On Left" />
 
         <q-toolbar-title class="absolute-center">
           {{title}}
@@ -81,7 +81,7 @@ export default defineComponent({
     }
   },
 
-  
+
   components: {
     EssentialLink
   },
