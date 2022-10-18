@@ -5,9 +5,10 @@
       <q-chat-message
       v-for="message in messages"
         :key="message.text"
+        
         :name="[message.from]"
         :text="[message.text]"
-        sent
+        :sent="message.from =='me' ? true: false"
       />
     </div>
     <q-footer elevated>
