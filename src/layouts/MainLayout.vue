@@ -2,7 +2,13 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn color="primary" icon="mail" label="On Left" />
+        <q-btn
+        v-if="$route.fullPath.includes('/chat')"
+          to="/"
+          color="primary"
+          icon="mail"
+          label="Back"
+          desnse />
 
         <q-toolbar-title class="absolute-center">
           {{title}}
